@@ -1,0 +1,16 @@
+
+<table xmlns:th="http://www.w3.org/1999/xhtml">
+    <tbody>
+    <tr th:each="fila, rowStat : ${tablero}">
+        <td th:each="celda, colStat : ${fila}"
+            onclick="this.querySelector('form').submit()"
+            style="cursor: pointer;" >
+            <p th:text="${celda}"></p>
+            <form th:action="@{/partida/{partida}(partida=${partida})}" method="post">
+                <input type="hidden" name="fila" th:value="${rowStat.index}" />
+                <input type="hidden" name="columna" th:value="${colStat.index}" />
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>

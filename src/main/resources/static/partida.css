@@ -1,0 +1,43 @@
+/* Estilos para la tabla */
+table {
+    border-collapse: collapse;
+    width: 300px; /* Ajusta el tamaño según lo necesites */
+    height: 300px;
+    text-align: center;
+    font-size: 2rem;
+    background-color: #ffffff;
+}
+
+/* Bordes y tamaño de celdas */
+td {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #333; /* Bordes oscuros para las líneas del tablero */
+    cursor: pointer;
+    vertical-align: middle;
+    padding: 0; /* Elimina el padding para que el botón se ajuste */
+}
+
+/* Estilo de los botones dentro de cada celda */
+td form button {
+    width: 100%;
+    height: 100%;
+    font-size: 2rem; /* Asegura que el texto sea visible */
+    border: none; /* Quita el borde del botón */
+    background: transparent; /* Fondo transparente para el botón */
+    cursor: pointer;
+}
+
+/* Estilo de las celdas cuando se hace clic */
+td:hover {
+    background-color: #e6e6e6; /* Efecto al pasar el mouse */
+}
+
+/* Personalizar fuente o colores */
+td.X {
+    color: #ff6b6b; /* Color para "X" */
+}
+
+td.O {
+    color: #4dabf7; /* Color para "O" */
+}

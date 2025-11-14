@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+<body>
+    <div th:replace="~{fragments/nav}"></div>
+    <form method="post" action="/filtrar">
+        <input type="text" value="nombre" placeholder="Nombre de jugador">
+        <button>Enviar</button>
+    </form>
+    <table>
+        <thead>
+            <th>Jugador</th>
+            <th>Iniciada</th>
+            <th>Finalizada</th>
+            <th>Ganada</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            <tr th:each="p : ${partidas}">
+                <td th:text="${p.jugador}"></td>
+                <td th:text="${p.inicio}"></td>
+                <td th:text="${p.final}"></td>
+                <td th:text="${p.ganada}"></td>
+                <td><a th:text="${p.accion}" th:href="@{/partida/{id}(id = ${p.jugador})}"></a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
